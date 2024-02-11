@@ -1,0 +1,47 @@
+/* Add bouncing animation */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Apply animation to images with the bouncing-image class */
+.bouncing-image {
+  animation: bounce 2s infinite; /* Adjust animation duration as needed */
+}
+
+/* Add this CSS to your stylesheet */
+@keyframes vibrate-1 {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.vibrate-animation {
+  animation: vibrate-1 0.5s infinite;
+}
