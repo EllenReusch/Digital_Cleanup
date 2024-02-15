@@ -1,0 +1,27 @@
+/* Add this CSS to your stylesheet */
+.section-background-animation {
+  animation: color-change-2x 2s infinite alternate; /* Adjust the duration and timing as needed */
+}
+
+@keyframes color-change-2x {
+  0% {
+    background: #383d3e;
+  }
+  100% {
+    background: #000000;
+  }
+}
+
+/* Add this CSS to your stylesheet */
+@keyframes color-change {
+  0% {
+    color: #4515b7; /* Purple */
+  }
+  100% {
+    color: #deab29; /* Yellow */
+  }
+}
+
+.color-change-animation {
+  animation: color-change 5s infinite alternate; /* Adjust the duration and timing as needed */
+}
