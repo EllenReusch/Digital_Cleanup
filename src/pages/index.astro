@@ -2,15 +2,49 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 import { Image } from 'astro:assets';
-import bogforside from "../assets/images/kobenhavnerbilleder-3.jpg";
-import bogopslag from "../assets/images/kobenhavnerbilleder-1.jpg";
-import bogopslag2 from "../assets/images/kobenhavnerbilleder-2.jpg";
-import bogforfatter from "../assets/images/kobenhavnerbilleder-4.jpg";
+import balance_font from "../assets/images/balance_font.png";
+import mockup1 from "../assets/images/mockup1.png";
+import mockup2 from "../assets/images/mockup2.png";
+import mockup3 from "../assets/images/mockup3.png";
+import proces1 from "../assets/images/proces1.png"
+import proces2 from "../assets/images/proces2.png"
 const images = await Astro.glob("/src/assets/images/galleri/*").then(files => {
   return files.map(file => file.default);
 });
 ---
 <MainLayout title="Titel">
+	 <style>
+        /* Custom styles */
+        .green-line {
+            border-bottom: 2px solid #00FF00; /* Green line */
+        }
+        .square {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #00FF00; /* Green border */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto">
+        <!-- Green line -->
+        <div class="green-line mb-4"></div>
+        
+        <!-- Picture -->
+        <div class="text-center mb-4">
+			<Image src={balance_font} alt="Københavnerbilleder bogforside" class="mx-auto" />
+        </div>
+        
+        <!-- Square with text -->
+        <div class="text-center">
+            <div class="square mx-auto flex items-center justify-center">
+                <p class="text-center px-4">Ideen bag denne typografi er at skabe en balance mellem det bløde og hårde, kantede og formede, udadvendte og indadvendte</p>
+            </div>
+        </div>
+    </div>
+</body>
+	<!-- 
 	<h1 id="herounit" class="text-4xl md:text-7xl mb-8">Københavnerbilleder</h1>
 		<section class="grid md:grid-cols-2 border-8 border-black">		
 			<div class="">
@@ -117,76 +151,5 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then(files => {
 			</article>
 		</section>
 
-		<section id="billeder" class="mt-32">
-			<h2 class="text-4xl font-bold">Udvalgte billeder fra bogen</h2>
-			<div class="columns-2 lg:columns-4">
-			{
-				images.map(({ src }) => (
-				<div class="">
-					<img
-						src={src}
-						class="mb-4"
-						alt=""
-						loading="lazy"
-					/>
-				</div>
-				))
-			}
-			</div>
-		</section>
-		<!-- tailwind form -->
-	<section  id="formular" class="max-w-lg mx-auto mt-32 p-4">
-		<h2 class="text-4xl font-bold pb-4">Køb bogen!</h2>
-		<form class="space-y-4 grid grid-cols-1 gap-6">
-
-			<div class="">
-				<label for="antal">Antal:</label>
-				<input type="number" id="antal" name="antal" placeholder="1">
-			</div>
-
-			<div class="">
-				<span>Levering:</span>
-				<input type="radio" id="postnord" name="levering">
-				<label for="postnord" checked="checked">PostNord</label>
-				<input type="radio" id="afhent" name="levering">
-				<label for="afhent">Afhent selv</label>
-			</div>
-		
-			<div class="grid gap-3">
-				<label for="navn">Navn:</label>
-				<input type="text" id="navn" name="navn" placeholder="Anders And">
-			</div>
-
-			<div class="grid gap-3">
-				<label for="adresse">Adresse:</label>
-				<input type="text" id="adresse" name="adresse" placeholder="Paradisæblevej 8">
-			</div>
-
-			<div class="grid gap-3">
-				<label for="email">Antal:</label>
-				<input type="email" id="email" name="email" placeholder="anders@andeby.dk">
-			</div>
-
-			<div class="grid gap-3 grid-cols-6">
-				<label for="postnummer" class="col-span-6">Postnummer & by:</label>
-				<input type="text" id="postnummer" name="postnummer" class="col-span-2" placeholder="0900">
-				<input type="text" id="bynavn" name="bynavn" disabled class="col-span-4" placeholder="Andeby C">
-			</div>
-
-			<div class="grid gap-3">
-				<label for="telefon">Telefon:</label>
-				<input type="tel" id="telefon" name="telefon" placeholder="555-555">
-			</div>
-
-			<div class="">
-				<input type="checkbox" id="nyhedsbrev" name="nyhedsbrev">
-				<label for="nyhedsbrev">Ja tak til nyhedsbreve og tilbud</label>
-			</div>
-
-			<div class="flex justify-end">
-				<Button variant="primary" size="medium">Til betaling</Button>
-			</div>
-		</form>
-	</section>
-	<!-- tailwind form slut -->
+	-->
 </MainLayout>
